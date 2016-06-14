@@ -1,2 +1,2 @@
 # mytracker-android
-android myTracker sdk
+Simple demo application for myTracker SDK
