@@ -5,7 +5,7 @@
 
 [![Bintray][bintray-svg]][bintray-link]
 
-Android SDK of myTracker Analytics
+myTracker — free mobile analytics for iOS, Android and Windows platforms. Get connected to know everything about your apps, audience and advertising campaigns.
 
 ## Integrate
 
