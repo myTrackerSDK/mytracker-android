@@ -31,7 +31,7 @@ Android 2.3
 [license-svg]: https://img.shields.io/badge/license-LGPL-lightgrey.svg
 [license-link]: https://github.com/myTrackerSDK/mytracker-android/blob/master/LICENSE
 
-[bintray-svg]: https://img.shields.io/bintray/v/mytracker/maven/mytracker-sdk.svg
+[bintray-svg]: https://api.bintray.com/packages/mytracker/maven/mytracker-sdk/images/download.svg
 [bintray-link]: https://bintray.com/mytracker/maven/mytracker-sdk/_latestVersion
 
 [platforms-svg]: https://img.shields.io/badge/platform-Android-lightgrey.svg
