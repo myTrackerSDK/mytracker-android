@@ -3,6 +3,7 @@ package com.my.mytrackerdemoapp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.my.tracker.MyTracker;
 
@@ -44,17 +45,29 @@ public class MainActivity extends AppCompatActivity
 		Map<String, String> eventCustomParams = new HashMap<>();
 		eventCustomParams.put("someParamKey", "someParamValue");
 
-		MyTracker.trackLoginEvent(eventCustomParams);
+		boolean tracked;
+		tracked = MyTracker.trackLoginEvent(eventCustomParams);
+		Toast.makeText(this,
+				"Tracking login: " + (tracked ? "success" : "failure"),
+				Toast.LENGTH_SHORT).show();
 	}
 
 	public void trackInvite(View view)
 	{
-		MyTracker.trackInviteEvent();
+		boolean tracked;
+		tracked = MyTracker.trackInviteEvent();
+		Toast.makeText(this,
+				"Tracking invite: " + (tracked ? "success" : "failure"),
+				Toast.LENGTH_SHORT).show();
 	}
 
 	public void trackRegistration(View view)
 	{
-		MyTracker.trackRegistrationEvent();
+		boolean tracked;
+		tracked = MyTracker.trackRegistrationEvent();
+		Toast.makeText(this,
+				"Tracking registration: " + (tracked ? "success" : "failure"),
+				Toast.LENGTH_SHORT).show();
 	}
 
 	public void trackPurchase(View view)
@@ -92,16 +105,24 @@ public class MainActivity extends AppCompatActivity
 		}
 
 		String fakeDataSignature = "FakeDataSignature";
+		boolean tracked = false;
 
 		if (fakeSkuDetailsJson != null && fakePurchaseDataJson != null)
 		{
-			MyTracker.trackPurchaseEvent(fakeSkuDetailsJson, fakePurchaseDataJson,
+			tracked = MyTracker.trackPurchaseEvent(fakeSkuDetailsJson, fakePurchaseDataJson,
 					fakeDataSignature);
 		}
+		Toast.makeText(this,
+				"Tracking purchase: " + (tracked ? "success" : "failure"),
+				Toast.LENGTH_SHORT).show();
 	}
 
 	public void trackLevel(View view)
 	{
-		MyTracker.trackLevelEvent();
+		boolean tracked;
+		tracked = MyTracker.trackLevelEvent();
+		Toast.makeText(this,
+				"Tracking level: " + (tracked ? "success" : "failure"),
+				Toast.LENGTH_SHORT).show();
 	}
 }
