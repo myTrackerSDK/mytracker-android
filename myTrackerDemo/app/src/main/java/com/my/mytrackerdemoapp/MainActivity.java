@@ -1,5 +1,6 @@
 package com.my.mytrackerdemoapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -7,14 +8,70 @@ import android.widget.Toast;
 
 import com.my.tracker.MyTracker;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity
 {
+	public static final int PURCHASE_REQUEST_CODE = 1001;
+
+	public void trackLogin(View view)
+	{
+		// you can add custom params you want to track to all events
+		// can be omitted or null
+		Map<String, String> eventCustomParams = new HashMap<>();
+		eventCustomParams.put("someParamKey", "someParamValue");
+
+		boolean tracked;
+		tracked = MyTracker.trackLoginEvent(eventCustomParams);
+		Toast.makeText(this,
+					   "Tracking login: " + (tracked ? "success" : "failure"),
+					   Toast.LENGTH_SHORT).show();
+	}
+
+	public void trackInvite(View view)
+	{
+		boolean tracked;
+		tracked = MyTracker.trackInviteEvent();
+		Toast.makeText(this,
+					   "Tracking invite: " + (tracked ? "success" : "failure"),
+					   Toast.LENGTH_SHORT).show();
+	}
+
+	public void trackRegistration(View view)
+	{
+		boolean tracked;
+		tracked = MyTracker.trackRegistrationEvent();
+		Toast.makeText(this,
+					   "Tracking registration: " + (tracked ? "success" : "failure"),
+					   Toast.LENGTH_SHORT).show();
+	}
+
+	public void trackPurchase(View view)
+	{
+		// Create buy bundle
+		// Bundle buyIntentBundle = callMethodToReceiveBundle();
+
+		// Extracting pending intent from bundle
+		// PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
+
+		// Starting intent sender
+		// startIntentSenderForResult(pendingIntent.getIntentSender(),
+		//							  PURCHASE_REQUEST_CODE,
+		//							  new Intent(),
+		//							  0,
+		//							  0,
+		//							  0);
+	}
+
+	public void trackLevel(View view)
+	{
+		boolean tracked;
+		tracked = MyTracker.trackLevelEvent();
+		Toast.makeText(this,
+					   "Tracking level: " + (tracked ? "success" : "failure"),
+					   Toast.LENGTH_SHORT).show();
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -38,91 +95,15 @@ public class MainActivity extends AppCompatActivity
 		MyTracker.onStopActivity(this);
 	}
 
-	public void trackLogin(View view)
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
-		// you can add custom params you want to track to all events
-		// can be omitted or null
-		Map<String, String> eventCustomParams = new HashMap<>();
-		eventCustomParams.put("someParamKey", "someParamValue");
+		super.onActivityResult(requestCode, resultCode, data);
 
-		boolean tracked;
-		tracked = MyTracker.trackLoginEvent(eventCustomParams);
-		Toast.makeText(this,
-				"Tracking login: " + (tracked ? "success" : "failure"),
-				Toast.LENGTH_SHORT).show();
-	}
-
-	public void trackInvite(View view)
-	{
-		boolean tracked;
-		tracked = MyTracker.trackInviteEvent();
-		Toast.makeText(this,
-				"Tracking invite: " + (tracked ? "success" : "failure"),
-				Toast.LENGTH_SHORT).show();
-	}
-
-	public void trackRegistration(View view)
-	{
-		boolean tracked;
-		tracked = MyTracker.trackRegistrationEvent();
-		Toast.makeText(this,
-				"Tracking registration: " + (tracked ? "success" : "failure"),
-				Toast.LENGTH_SHORT).show();
-	}
-
-	public void trackPurchase(View view)
-	{
-		String fakeSkuDetails = "{" +
-				"  \"type\": \"inapp\"," +
-				"  \"price\": \"€7.99\"," +
-				"  \"price_amount_micros\": \"7990000\"," +
-				"  \"price_currency_code\": \"EUR\"," +
-				"  \"title\": \"Something\"," +
-				"  \"description\": \"Something good for testing\"," +
-				"  \"productId\": \"FakeProductId\"" +
-				"}";
-
-		String fakePurchaseData = "{" +
-				"   \"orderId\":\"12999763169054705758.1371079406387615\"," +
-				"   \"packageName\":\"com.example.app\"," +
-				"   \"productId\":\"exampleSku\"," +
-				"   \"purchaseTime\":1345678900000," +
-				"   \"purchaseState\":0," +
-				"   \"developerPayload\":\"bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ\"," +
-				"   \"purchaseToken\":\"opaque-token-up-to-1000-characters\"" +
-				" }";
-
-		JSONObject fakeSkuDetailsJson = null;
-		JSONObject fakePurchaseDataJson = null;
-
-		try
+		// Checking if the request code is PURCHASE_REQUEST_CODE
+		if(PURCHASE_REQUEST_CODE == requestCode)
 		{
-			fakeSkuDetailsJson = new JSONObject(fakeSkuDetails);
-			fakePurchaseDataJson = new JSONObject(fakePurchaseData);
-		} catch (JSONException e)
-		{
-			e.printStackTrace();
+			MyTracker.onActivityResult(resultCode, data);
 		}
-
-		String fakeDataSignature = "FakeDataSignature";
-		boolean tracked = false;
-
-		if (fakeSkuDetailsJson != null && fakePurchaseDataJson != null)
-		{
-			tracked = MyTracker.trackPurchaseEvent(fakeSkuDetailsJson, fakePurchaseDataJson,
-					fakeDataSignature);
-		}
-		Toast.makeText(this,
-				"Tracking purchase: " + (tracked ? "success" : "failure"),
-				Toast.LENGTH_SHORT).show();
-	}
-
-	public void trackLevel(View view)
-	{
-		boolean tracked;
-		tracked = MyTracker.trackLevelEvent();
-		Toast.makeText(this,
-				"Tracking level: " + (tracked ? "success" : "failure"),
-				Toast.LENGTH_SHORT).show();
 	}
 }

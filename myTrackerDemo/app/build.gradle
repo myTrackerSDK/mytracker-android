@@ -2,7 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    buildToolsVersion '26.0.2'
+
     defaultConfig {
         applicationId "com.my.mytrackerdemoapp"
         minSdkVersion 14
@@ -19,8 +20,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:26.1.0';
-    compile 'com.my.tracker:mytracker-sdk:1.4.5'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.my.tracker:mytracker-sdk:1.5.0'
 }
