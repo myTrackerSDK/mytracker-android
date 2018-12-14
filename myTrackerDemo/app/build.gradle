@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.my.mytrackerdemoapp"
@@ -22,5 +21,5 @@ android {
 dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'com.my.tracker:mytracker-sdk:1.5.4'
+    implementation 'com.my.tracker:mytracker-sdk:1.5.5'
 }

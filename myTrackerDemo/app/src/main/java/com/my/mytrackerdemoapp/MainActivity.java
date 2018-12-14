@@ -82,20 +82,6 @@ public class MainActivity extends AppCompatActivity
 	}
 
 	@Override
-	protected void onStart()
-	{
-		super.onStart();
-		MyTracker.onStartActivity(this);
-	}
-
-	@Override
-	protected void onStop()
-	{
-		super.onStop();
-		MyTracker.onStopActivity(this);
-	}
-
-	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
 		super.onActivityResult(requestCode, resultCode, data);

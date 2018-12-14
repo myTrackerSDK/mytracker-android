@@ -1,12 +1,14 @@
 package com.my.mytrackerdemoapp;
 
 import android.app.Application;
+import android.support.annotation.NonNull;
 
 import com.my.tracker.MyTracker;
 import com.my.tracker.MyTrackerParams;
 
 public class TrackerApplication extends Application
 {
+	private static @NonNull String APP_ID = "66039511634340742311";
 
 	@Override
 	public void onCreate()
@@ -15,7 +17,7 @@ public class TrackerApplication extends Application
 
 		MyTracker.setDebugMode(true); // for debugging, turn off in production
 
-		MyTracker.createTracker("89232805149757155048", this);
+		MyTracker.createTracker(APP_ID, this);
 
 		MyTrackerParams trackerParams = MyTracker.getTrackerParams();
 
