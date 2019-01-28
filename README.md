@@ -26,7 +26,7 @@ Demo-app with examples of integration available in [myTrackerDemo folder](https:
 
 ## Requirements
 
-Android 2.3
+Android 4.0
 
 [license-svg]: https://img.shields.io/badge/license-LGPL-lightgrey.svg
 [license-link]: https://github.com/myTrackerSDK/mytracker-android/blob/master/LICENSE
