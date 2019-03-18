@@ -16,9 +16,9 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
         mavenLocal()
-        google()
         flatDir {
             dirs 'libs'
         }
