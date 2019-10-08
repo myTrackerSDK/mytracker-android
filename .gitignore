@@ -34,3 +34,6 @@ captures/
 .idea/
 
 *.iml
+
+# Screenshots
+screenshots/
