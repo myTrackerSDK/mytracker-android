@@ -16,7 +16,7 @@ myTracker — free mobile analytics for iOS, Android and Windows platforms. Get 
    ```groovy
    dependencies {
        //... other dependences
-       compile 'com.my.tracker:mytracker-sdk:1.5.+'
+       compile 'com.my.tracker:mytracker-sdk:1.5.6'
    }
    ```
 
