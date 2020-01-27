@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom|center_horizontal"
+    android:fillViewport="true"
+    tools:context="com.my.mytrackerdemoapp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_trackLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="trackLogin"
+            android:text="@string/track_login" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_trackInvite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="trackInvite"
+            android:text="@string/track_invite" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_trackRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="trackRegistration"
+            android:text="@string/track_registration" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_trackPurchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="trackPurchase"
+            android:text="@string/track_purchase" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_trackLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="trackLevel"
+            android:text="@string/track_level" />
+
+    </LinearLayout>
+
+</ScrollView>
