@@ -17,14 +17,10 @@ public class TrackerApplication extends Application
 
 		MyTracker.setDebugMode(true); // for debugging, turn off in production
 
-		MyTracker.createTracker(APP_ID, this);
+		MyTracker.getTrackerParams()
+				 .setAge(22)
+				 .setGender(MyTrackerParams.Gender.FEMALE);
 
-		MyTrackerParams trackerParams = MyTracker.getTrackerParams();
-
-		// example params
-		trackerParams.setAge(22);
-		trackerParams.setGender(MyTrackerParams.Gender.FEMALE);
-
-		MyTracker.initTracker();
+		MyTracker.initTracker(APP_ID, this);
 	}
 }

@@ -22,29 +22,20 @@ public class MainActivity extends AppCompatActivity
 		Map<String, String> eventCustomParams = new HashMap<>();
 		eventCustomParams.put("someParamKey", "someParamValue");
 
-		boolean tracked;
-		tracked = MyTracker.trackLoginEvent(eventCustomParams);
-		Toast.makeText(this,
-					   "Tracking login: " + (tracked ? "success" : "failure"),
-					   Toast.LENGTH_SHORT).show();
+		MyTracker.trackLoginEvent(eventCustomParams);
+		Toast.makeText(this, "Tracking login", Toast.LENGTH_SHORT).show();
 	}
 
 	public void trackInvite(View view)
 	{
-		boolean tracked;
-		tracked = MyTracker.trackInviteEvent();
-		Toast.makeText(this,
-					   "Tracking invite: " + (tracked ? "success" : "failure"),
-					   Toast.LENGTH_SHORT).show();
+		MyTracker.trackInviteEvent();
+		Toast.makeText(this, "Tracking invite", Toast.LENGTH_SHORT).show();
 	}
 
 	public void trackRegistration(View view)
 	{
-		boolean tracked;
-		tracked = MyTracker.trackRegistrationEvent();
-		Toast.makeText(this,
-					   "Tracking registration: " + (tracked ? "success" : "failure"),
-					   Toast.LENGTH_SHORT).show();
+		MyTracker.trackRegistrationEvent();
+		Toast.makeText(this, "Tracking registration", Toast.LENGTH_SHORT).show();
 	}
 
 	public void trackPurchase(View view)
@@ -66,11 +57,8 @@ public class MainActivity extends AppCompatActivity
 
 	public void trackLevel(View view)
 	{
-		boolean tracked;
-		tracked = MyTracker.trackLevelEvent();
-		Toast.makeText(this,
-					   "Tracking level: " + (tracked ? "success" : "failure"),
-					   Toast.LENGTH_SHORT).show();
+		MyTracker.trackLevelEvent();
+		Toast.makeText(this, "Tracking level", Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
@@ -78,7 +66,8 @@ public class MainActivity extends AppCompatActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		MyTracker.getTrackerParams().setTrackingEnvironmentEnabled(true);
+
+		MyTracker.getTrackerConfig().setTrackingEnvironmentEnabled(true);
 	}
 
 	@Override
@@ -87,7 +76,7 @@ public class MainActivity extends AppCompatActivity
 		super.onActivityResult(requestCode, resultCode, data);
 
 		// Checking if the request code is PURCHASE_REQUEST_CODE
-		if(PURCHASE_REQUEST_CODE == requestCode)
+		if (PURCHASE_REQUEST_CODE == requestCode)
 		{
 			MyTracker.onActivityResult(resultCode, data);
 		}
