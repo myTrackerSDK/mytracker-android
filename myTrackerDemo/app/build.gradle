@@ -21,7 +21,7 @@ android {
 dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'com.my.tracker:mytracker-sdk:2.0.0'
+    implementation 'com.my.tracker:mytracker-sdk:2.0.1'
 
 //    implementation fileTree(dir: "libs", include: "mytracker-sdk.aar")
 }
