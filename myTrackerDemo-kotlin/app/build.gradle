@@ -11,10 +11,23 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
+            debuggable false
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "manifestType"
+    productFlavors {
+        withpermissions {
+            dimension "manifestType"
+        }
+        withoutpermissions {
+            dimension "manifestType"
         }
     }
 }
@@ -24,7 +37,5 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v13:1.0.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.google.android.gms:play-services-ads-identifier:17.0.0"
-    implementation("com.my.tracker:mytracker-sdk:2.0.1", {exclude group: "com.google.android.gms"})
-
-//    implementation fileTree(dir: "libs", include: "mytracker-sdk.aar")
+    implementation("com.my.tracker:mytracker-sdk:$sdkVersion", { exclude group: "com.google.android.gms" })
 }
