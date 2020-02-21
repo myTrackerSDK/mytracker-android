@@ -22,7 +22,7 @@ myTracker — free mobile analytics for iOS, Android and Windows platforms. Get 
 
 Integration instructions are available on our [website](https://tracker.my.com/docs/).
 
-Demo-app with examples of integration available in [myTrackerDemo folder](https://github.com/myTrackerSDK/mytracker-android/tree/master/myTrackerDemo).
+Demo-app with examples of integration available in [myTrackerDemo-kotlin folder](https://github.com/myTrackerSDK/mytracker-android/tree/master/myTrackerDemo-kotlin).
 
 ## Requirements
 
