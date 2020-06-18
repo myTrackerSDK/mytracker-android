@@ -3,7 +3,7 @@ buildscript {
     ext {
         apply from: "version.gradle"
 
-        kotlin_version = "1.3.61"
+        kotlin_version = "1.3.72"
     }
 
     repositories {

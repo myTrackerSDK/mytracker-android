@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity()
         // can be omitted or null
         val eventCustomParams: MutableMap<String, String> = HashMap()
         eventCustomParams["someParamKey"] = "someParamValue"
-        MyTracker.trackLoginEvent(eventCustomParams)
+        MyTracker.trackLoginEvent("custom_user_id", eventCustomParams)
         Toast.makeText(this, "Tracking login", Toast.LENGTH_SHORT).show()
     }
 
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity()
 
     fun trackRegistration(ignored: View)
     {
-        MyTracker.trackRegistrationEvent()
+        MyTracker.trackRegistrationEvent("custom_user_id")
         Toast.makeText(this, "Tracking registration", Toast.LENGTH_SHORT).show()
     }
 
@@ -58,6 +58,15 @@ class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         MyTracker.getTrackerConfig().isTrackingEnvironmentEnabled = true
+
+        handleDepplink(intent)
+    }
+
+    override fun onNewIntent(intent: Intent?)
+    {
+        super.onNewIntent(intent)
+
+        handleDepplink(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
@@ -68,6 +77,19 @@ class MainActivity : AppCompatActivity()
         {
             MyTracker.onActivityResult(resultCode, data)
         }
+    }
+
+    fun handleDepplink(intent: Intent?)
+    {
+        Toast.makeText(this, "Handling deeplink", Toast.LENGTH_SHORT).show()
+
+        val deeplink: String? = MyTracker.handleDeeplink(intent)
+        if (deeplink.isNullOrEmpty())
+        {
+            return
+        }
+
+        Toast.makeText(this, "Deeplink tracked: $deeplink", Toast.LENGTH_SHORT).show()
     }
 
     companion object
