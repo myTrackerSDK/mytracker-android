@@ -3,14 +3,14 @@
 ![Platforms][platforms-svg]
 [![License][license-svg]][license-link]
 
-[![Bintray][bintray-svg]][bintray-link]
+[![Maven Central][mvnepository-svg]][maven-link]
 
 myTracker — free mobile analytics for iOS, Android and Windows platforms. Get connected to know everything about your apps, audience and advertising campaigns.
 
 ## Integrate
 
 **Installation**
- - **[JCenter][bintray-link]**
+ - **[Maven Central][maven-link]**
 
    Add the following line to your build.gradle file:
    ```groovy
@@ -31,7 +31,7 @@ Android 4.0
 [license-svg]: https://img.shields.io/badge/license-LGPL-lightgrey.svg
 [license-link]: https://github.com/myTrackerSDK/mytracker-android/blob/master/LICENSE
 
-[bintray-svg]: https://api.bintray.com/packages/mytracker/maven/mytracker-sdk/images/download.svg
-[bintray-link]: https://bintray.com/mytracker/maven/mytracker-sdk/_latestVersion
+[mvnepository-svg]: https://mvnrepository.com/assets/images/392dffac024b9632664e6f2c0cac6fe5-logo.png
+[maven-link]: https://mvnrepository.com/artifact/com.my.tracker/mytracker-sdk
 
 [platforms-svg]: https://img.shields.io/badge/platform-Android-lightgrey.svg
