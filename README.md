@@ -2,8 +2,7 @@
 
 ![Platforms][platforms-svg]
 [![License][license-svg]][license-link]
-
-[![Maven Central][mvnepository-svg]][maven-link]
+[![Maven Central][maven-svg]][maven-link]
 
 myTracker — free mobile analytics for iOS, Android and Windows platforms. Get connected to know everything about your apps, audience and advertising campaigns.
 
@@ -31,7 +30,7 @@ Android 4.0
 [license-svg]: https://img.shields.io/badge/license-LGPL-lightgrey.svg
 [license-link]: https://github.com/myTrackerSDK/mytracker-android/blob/master/LICENSE
 
-[mvnepository-svg]: https://mvnrepository.com/assets/images/392dffac024b9632664e6f2c0cac6fe5-logo.png
-[maven-link]: https://mvnrepository.com/artifact/com.my.tracker/mytracker-sdk
+[maven-svg]: https://maven-badges.herokuapp.com/maven-central/com.my.tracker/mytracker-sdk/badge.svg
+[maven-link]: https://search.maven.org/artifact/com.my.tracker/mytracker-sdk
 
 [platforms-svg]: https://img.shields.io/badge/platform-Android-lightgrey.svg
