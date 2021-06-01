@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity()
         // can be omitted or null
         val eventCustomParams: MutableMap<String, String> = HashMap()
         eventCustomParams["someParamKey"] = "someParamValue"
-        MyTracker.trackLoginEvent("custom_user_id", eventCustomParams)
+        MyTracker.trackLoginEvent("custom_user_id", "vk_connect_id", eventCustomParams)
         Toast.makeText(this, "Tracking login", Toast.LENGTH_SHORT).show()
     }
 
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity()
 
     fun trackRegistration(ignored: View)
     {
-        MyTracker.trackRegistrationEvent("custom_user_id")
+        MyTracker.trackRegistrationEvent("custom_user_id", "vk_connect_id")
         Toast.makeText(this, "Tracking registration", Toast.LENGTH_SHORT).show()
     }
 
