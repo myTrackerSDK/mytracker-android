@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">MyTracker demo app</string>
-    <string name="track_login">Track login</string>
-    <string name="track_invite">Track invite</string>
-    <string name="track_registration">Track registration</string>
-    <string name="track_purchase">Track purchase</string>
-    <string name="track_level">Track level</string>
-</resources>
