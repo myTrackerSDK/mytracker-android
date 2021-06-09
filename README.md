@@ -4,7 +4,7 @@
 [![License][license-svg]][license-link]
 [![Maven Central][maven-svg]][maven-link]
 
-myTracker — free mobile analytics for iOS, Android and Windows platforms. Get connected to know everything about your apps, audience and advertising campaigns.
+myTracker — free mobile analytics for iOS and Android platforms. Get connected to know everything about your apps, audience and advertising campaigns.
 
 ## Integrate
 
