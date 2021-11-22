@@ -21,7 +21,7 @@ myTracker — free mobile analytics for iOS and Android platforms. Get connected
 
 Integration instructions are available on the [website](https://tracker.my.com/docs/sdk/android/api).
 
-Demo-app with examples of integration is available in the [myTrackerDemo-kotlin folder](https://github.com/myTrackerSDK/mytracker-android/tree/master/myTrackerDemo-kotlin).
+Demo-app with examples of integration is available in the [myTrackerDemo folder](https://github.com/myTrackerSDK/mytracker-android/tree/master/myTrackerDemo).
 
 ## Requirements
 
