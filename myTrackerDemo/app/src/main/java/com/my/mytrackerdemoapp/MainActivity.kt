@@ -59,14 +59,14 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
         MyTracker.getTrackerConfig().isTrackingEnvironmentEnabled = true
 
-        handleDepplink(intent)
+        handleDeeplink(intent)
     }
 
     override fun onNewIntent(intent: Intent?)
     {
         super.onNewIntent(intent)
 
-        handleDepplink(intent)
+        handleDeeplink(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity()
         }
     }
 
-    fun handleDepplink(intent: Intent?)
+    fun handleDeeplink(intent: Intent?)
     {
         Toast.makeText(this, "Handling deeplink", Toast.LENGTH_SHORT).show()
 
